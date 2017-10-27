@@ -89,15 +89,16 @@ def main():
     for epoch in range(args.start_epoch, args.epochs):
         adjust_learning_rate(optimizer, epoch)
         # train for one epoch
-        train(train_loader, model, criterion, optimizer, epoch)
+        
+       # train(train_loader, model, criterion, optimizer, epoch)
         # save checkpoint
-        filename = args.saveprefix + '_epoch_' + str(epoch) + '.checkpoint.pth.tar'
-        logger.info('Saving checkpoint to: ' + filename)
-        torch.save({
-            'epoch': epoch + 1,
-            'state_dict': model.state_dict(),
-            'optimizer': optimizer.state_dict(),
-        }, filename)
+#         filename = args.saveprefix + '_epoch_' + str(epoch) + '.checkpoint.pth.tar'
+#         logger.info('Saving checkpoint to: ' + filename)
+#         torch.save({
+#             'epoch': epoch + 1,
+#             'state_dict': model.state_dict(),
+#             'optimizer': optimizer.state_dict(),
+#         }, filename)
         # evaluate on validation set
         if args.evaluate:
             validate(val_loader, model, criterion)
