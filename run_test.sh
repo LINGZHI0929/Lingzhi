@@ -1,6 +1,6 @@
 #!/bin/sh
 
-python main_cs.py \
+python test_cs.py \
   --dataroot=/home/zhangyi/Cityscapes \
   --trainlist=/home/zhangyi/Cityscapes/filelist/fine_train.txt \
   --arch=resnet50_dilated_forseg_x8 \
@@ -15,3 +15,7 @@ python main_cs.py \
   --step_epoch=10 \
   --print_freq=10 \
   --saveprefix=cs_exp/res50/model
+
+
+  --vallist=/home/zhangyi/Cityscapes/cityscapes_val.txt
+  --evaluate=true
